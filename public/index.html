@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essentials Store - Fast &amp; Reliable Checkout</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <h1 class="store-title">Essentials Store</h1>
+        <p class="store-tagline">Quality essentials delivered to your door</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="grid-layout">
+        <!-- Products Section -->
+        <section class="products-section" aria-labelledby="products-heading">
+          <h2 id="products-heading" class="section-title">Available Products</h2>
+          <div class="products-grid" id="products-grid">
+            <!-- Product 1: Ceramic Coffee Mug -->
+            <article class="product-card" data-product-id="ceramic-coffee-mug" data-testid="product-ceramic-coffee-mug">
+              <div class="product-header">
+                <h3 class="product-name">Ceramic Coffee Mug</h3>
+                <span class="product-price" data-testid="price-ceramic-coffee-mug">$14.50</span>
+              </div>
+              <p class="product-desc">Handcrafted ceramic mug with ergonomic handle and matte glaze finish.</p>
+              <button 
+                type="button" 
+                class="btn btn-add-to-cart" 
+                data-id="ceramic-coffee-mug" 
+                data-testid="add-ceramic-coffee-mug"
+                aria-label="Add Ceramic Coffee Mug to cart">
+                Add to Cart
+              </button>
+            </article>
+
+            <!-- Product 2: Canvas Tote Bag -->
+            <article class="product-card" data-product-id="canvas-tote-bag" data-testid="product-canvas-tote-bag">
+              <div class="product-header">
+                <h3 class="product-name">Canvas Tote Bag</h3>
+                <span class="product-price" data-testid="price-canvas-tote-bag">$22.75</span>
+              </div>
+              <p class="product-desc">Heavyweight organic cotton tote bag with reinforced handles.</p>
+              <button 
+                type="button" 
+                class="btn btn-add-to-cart" 
+                data-id="canvas-tote-bag" 
+                data-testid="add-canvas-tote-bag"
+                aria-label="Add Canvas Tote Bag to cart">
+                Add to Cart
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <!-- Cart & Checkout Column -->
+        <div class="checkout-column">
+          <!-- Shopping Cart Section -->
+          <section class="cart-section" aria-labelledby="cart-heading">
+            <div class="cart-header">
+              <h2 id="cart-heading" class="section-title">Shopping Cart</h2>
+              <span class="cart-count-badge" id="cart-item-count" aria-live="polite">0 items</span>
+            </div>
+
+            <div id="cart-content" class="cart-content">
+              <!-- Cart items rendered here via app.js -->
+            </div>
+
+            <div class="cart-summary" id="cart-summary">
+              <div class="summary-line total-line">
+                <span class="summary-label">Order Total:</span>
+                <span class="order-total-amount" id="order-total" data-testid="order-total">$0.00</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Checkout Form Section -->
+          <section class="checkout-section" aria-labelledby="checkout-heading">
+            <h2 id="checkout-heading" class="section-title">Checkout</h2>
+
+            <!-- Accessible Error Alert Container -->
+            <div id="checkout-alert-container" class="alert-container" aria-live="assertive"></div>
+
+            <form novalidate id="checkout-form" class="checkout-form">
+              <div class="form-group">
+                <label for="customer-name" class="form-label">Full Name</label>
+                <input 
+                  type="text" 
+                  id="customer-name" 
+                  name="customerName" 
+                  class="form-input" 
+                  placeholder="e.g. Alex Rivera" 
+                  autocomplete="name" 
+                  required
+                >
+              </div>
+
+              <button type="submit" id="place-order-btn" class="btn btn-primary btn-submit" data-testid="place-order-button">
+                Place Order
+              </button>
+            </form>
+          </section>
+
+          <!-- Confirmation Panel Container -->
+          <div id="confirmation-container" class="confirmation-container" aria-live="polite"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; Essentials Store</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
